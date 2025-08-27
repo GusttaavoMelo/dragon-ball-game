@@ -1,0 +1,57 @@
+        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+        
+        body {
+            font-family: 'MedievalSharp', cursive;
+            background-image: url('https://64.media.tumblr.com/261cb062ca5c69fd0d3796e0590716ae/ffa47c0a375a8ad3-28/s1280x1920/34736947dff0ad3c166f534d5e8ccc7be64331d2.gifv');
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .card-selected {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 25px 50px -12px rgba(255, 215, 0, 0.6);
+            border: 2px solid gold;
+        }
+        
+        .battle-area {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #8B4513;
+            border-radius: 10px;
+        }
+        
+        .vs-text {
+            text-shadow: 0 0 10px red, 0 0 20px red;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        
+        .result-animation {
+            animation: resultPop 0.5s;
+        }
+        
+        @keyframes resultPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .card-back {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 2px solid #4a4a4a;
+        }

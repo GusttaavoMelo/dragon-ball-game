@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Battle: Goku vs Vegeta vs Freeza</title>
+    <link rel="shortcut icon" href="https://png.pngtree.com/png-clipart/20221118/ourmid/pngtree-dragon-ball-illustration-png-image_6464004.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/assets/styles/style.css">
+</head>
+<body class="text-white flex flex-col items-center py-8">
+    <div class="text-center mb-8 bg-black bg-opacity-70 p-6 rounded-lg ">
+        <h1 class="text-5xl font-bold mb-2 text-orange-600">Card Battle</h1>
+        <p class="text-xl">Choose your champion to duel the computer!</p>
+    </div>
+    
+    <div class="flex flex-wrap justify-center gap-6 mb-12">
+        <div class="card w-40 h-56 bg-gradient-to-br from-orange-900 to-orange-600 rounded-lg shadow-lg cursor-pointer flex flex-col items-center justify-center border-2 border-orange-800"
+             onclick="playGame('goku')" id="goku-card">
+            <img src="https://www.freeiconspng.com/thumbs/goku-png/goku-png-24.png" alt="Goku" class="w-24 h-24 mb-2">
+            <h3 class="text-xl font-bold">Goku</h3>
+            <p class="text-xs mt-1">Defeats Vegeta</p>
+        </div>
+        
+        <div class="card w-40 h-56 bg-gradient-to-br from-blue-900 to-blue-600 rounded-lg shadow-lg cursor-pointer flex flex-col items-center justify-center border-2 border-blue-800"
+             onclick="playGame('vegeta')" id="vegeta-card">
+            <img src="https://www.pngall.com/wp-content/uploads/13/Vegeta-PNG-Images.png" alt="Vegeta" class="w-24 h-24 mb-2">
+            <h3 class="text-xl font-bold">Vegeta</h3>
+            <p class="text-xs mt-1">Defeats Freeza</p>
+        </div>
+        
+        <div class="card w-40 h-56 bg-gradient-to-br from-purple-900 to-purple-600 rounded-lg shadow-lg cursor-pointer flex flex-col items-center justify-center border-2 border-purple-800"
+             onclick="playGame('freeza')" id="freeza-card">
+            <img src="https://wallpapers.com/images/hd/frieza-dragon-ball-villain-bo44f8s7cextcc16.png" alt="Freeza" class="w-24 h-24 mb-2">
+            <h3 class="text-xl font-bold">Freeza</h3>
+            <p class="text-xs mt-1">Defeats Goku</p>
+        </div>
+    </div>
+    
+    <div class="battle-area w-full max-w-2xl p-6 mb-8 flex flex-col items-center">
+        <h2 class="text-2xl font-bold mb-6">Battle Arena</h2>
+        
+        <div class="flex justify-between items-center w-full mb-8">
+            <div class="flex flex-col items-center w-1/3">
+                <h3 class="text-lg mb-2">Your Choice</h3>
+                <div id="player-choice" class="card-back w-32 h-44 rounded-lg flex items-center justify-center">
+                    <p class="text-gray-400">?</p>
+                </div>
+            </div>
+            
+            <div class="vs-text text-4xl font-bold mx-4">VS</div>
+            
+            <div class="flex flex-col items-center w-1/3">
+                <h3 class="text-lg mb-2">Computer</h3>
+                <div id="computer-choice" class="card-back w-32 h-44 rounded-lg flex items-center justify-center">
+                    <p class="text-gray-400">?</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="result" class="text-3xl font-bold mb-6 h-12 flex items-center justify-center">
+            <!-- Result will appear here -->
+        </div>
+        
+        <div class="flex gap-8 text-center">
+            <div>
+                <h3 class="text-lg">Wins</h3>
+                <p id="wins" class="text-2xl font-bold text-green-400">0</p>
+            </div>
+            <div>
+                <h3 class="text-lg">Losses</h3>
+                <p id="losses" class="text-2xl font-bold text-red-400">0</p>
+            </div>
+            <div>
+                <h3 class="text-lg">Draws</h3>
+                <p id="draws" class="text-2xl font-bold text-yellow-400">0</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="rules bg-black bg-opacity-70 p-6 rounded-lg max-w-2xl">
+        <h3 class="text-xl font-bold mb-2 text-yellow-400">Battle Rules:</h3>
+        <ul class="list-disc pl-5 text-left">
+            <li class="mb-1"><span class="text-orange-400">Goku</span> Defeats <span class="text-blue-400">Vegeta</span></li>
+            <li class="mb-1"><span class="text-blue-400">Vegeta</span> Defeats <span class="text-purple-400">Freeza</span></li>
+            <li class="mb-1"><span class="text-purple-400">Freeza</span> Defeats <span class="text-orange-400">Goku</span></li>
+            <li>Same card results in a draw</li>
+        </ul>
+    </div>
+    
+    <audio id="win-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"></audio>
+    <audio id="lose-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-retro-game-over-213.mp3"></audio>
+    <audio id="draw-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-neutral-game-notification-951.mp3"></audio>
+    
+    <script src="/src/assets/scripts/script.js"></script>
+</body>
+</html>
